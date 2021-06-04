@@ -258,6 +258,8 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
         child: widget.listType == null ||
                 widget.listType == MultiSelectListType.LIST
             ? ListView.builder(
+                shrinkWrap: true,
+                physics: ClampingScrollPhysics(),
                 itemCount: _items.length,
                 itemBuilder: (context, index) {
                   return _buildListItem(_items[index]);
